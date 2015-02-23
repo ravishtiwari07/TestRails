@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RailsCart</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="<%= controller.controller_name %>">
-
-<%= yield %>
-
-</body>
+    <head>
+      <title>Online RailsCart</title>
+      <%= stylesheet_link_tag    "application", media: "all","data-turbolinks-track" => true %>
+      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <%= csrf_meta_tags %>
+    </head>
+    <body class="<%= controller.controller_name %>">
+        <div id="banner" role="banner">
+          <%= image_tag("logo.png", id: "logo") %>
+          <%= @page_title || "My Online Rails Cart" %>
+        </div>
+        <div id="columns">
+          <div id="nav" role="navigation">
+            <ul>
+              <li><a href="./">Home</a></li>
+              <li><a href="">Contact</a></li>
+            </ul>
+          </div>
+          <div id="main">
+            <%= yield %>
+          </div>
+        </div>
+    </body>
 </html>
